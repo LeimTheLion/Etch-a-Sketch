@@ -1,0 +1,1 @@
+A project which shows my progress in learning JavaScript.

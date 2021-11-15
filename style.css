@@ -1,18 +1,36 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 50px;
     margin: 100px;
+    background-color: rgb(30, 58, 36);
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 700px;
-    max-height: 800px;
+    margin: 0;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    column-gap: 0px;
+    row-gap: 0px;
+    background-color: rgb(238, 226, 211);
+    align-items: stretch;
 }
 
 .square {
     border: 1px dotted gray;
-    width: 40px;
-    height: 40px;
+    margin: 0;
+}
+
+button {
+    align-self: center;
+    width: 100px;
+    border-radius: 0px;
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
 }

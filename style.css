@@ -15,15 +15,13 @@ body {
     display: grid;
     column-gap: 0px;
     row-gap: 0px;
-    background-color: rgb(238, 226, 211);
+    background-color: rgb(110, 110, 110);
     align-items: stretch;
 }
 
 .square {
-    border: 1px dotted rgb(128, 128, 128);
-    background-color: black;
+    border: 1px dotted rgb(155, 155, 155);
     margin: 0;
-    opacity: 0.5;
     transition: .25s;
 }
 

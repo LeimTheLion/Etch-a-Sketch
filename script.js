@@ -1,6 +1,4 @@
-const divContainer = document.querySelector('.container');
-
-let n = prompt("Choose the number of squares per side. (Max. 100)");
+let n = 16;
 let m = ((600 / n) - 2);
 let i;
 getGrid();
@@ -12,26 +10,33 @@ function addSquare() {
         divContainer.style.setProperty('grid-template-rows', 'repeat(' + n + ',' + (m + 2 + "px") + ')');
     }
     addColumn();
+
     const square = document.createElement('div');
     square.classList.add('square');
     square.addEventListener("mouseover", mouseOver);
     function mouseOver() {
         square.style.background = "gray";
     }
+
     square.style.width = m + "px";
     square.style.height = m + "px";
     divContainer.appendChild(square);
 
     const restart = document.querySelector('.restart');
     restart.onclick = () => {
-        remove();
+        const toRemove = document.querySelectorAll('.square');
+        toRemove.forEach(square => square.style.backgroundColor = "");
     }
 
-    function remove() {
-        document.querySelector('.square');
-        square.style.background = "";
-    }
+    const change = document.querySelector('.change');
+    change.onclick = () => {
+        const step1 = document.querySelectorAll('.square');
+        step1.forEach(square => divContainer.removeChild(square));
 
+        n = prompt("Choose the number of squares per side. (Max. 100)");
+        m = ((600 / n) - 2);
+        getGrid();
+    }
 }
 
 function getGrid() {
@@ -42,14 +47,5 @@ function getGrid() {
             }
         }
     }
+    else alert("The value you entered was invalid. Please try again.")
 }
-
-
-
-const change = document.querySelector('.change');
-change.onclick = () => {
-    
-}
-
-
-

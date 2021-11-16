@@ -34,7 +34,7 @@ function addSquare() {
     change.onclick = () => {
         n = prompt("Choose the number of squares per side. (Max. 100)");
         m = ((600 / n) - 2);
-        if (n <= 100) {
+        if (n >= 1 && n <= 100) {
             const step1 = document.querySelectorAll('.square');
             step1.forEach(square => divContainer.removeChild(square));
             getGrid();
